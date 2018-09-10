@@ -4,10 +4,7 @@ package com.akuna.security.controller;
 import com.akuna.security.domain.User;
 import com.akuna.security.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -19,7 +16,7 @@ public class UserController
     private UserService userService;
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public User getUser(String id) {
+    public User getUser(@RequestParam String id) {
         return userService.get(id);
     }
 
